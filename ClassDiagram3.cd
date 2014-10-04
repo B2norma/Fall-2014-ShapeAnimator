@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ShapeAnimator.Model.CanvasManager" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAAAAAAAAAAEAAAAAAAAACBIAAAAAAAAAAAAAAAAw=</HashCode>
+      <FileName>Model\CanvasManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShapeAnimator.Model.Shape">
+    <Position X="10.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAIAAAAAAAAAAAAACABAAAAAAAAAAAAAIYAA=</HashCode>
+      <FileName>Model\Shape.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShapeAnimator.Program" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShapeAnimator.Properties.Resources" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAIAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShapeAnimator.Properties.Settings" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShapeAnimator.View.Forms.ShapeAnimatorForm" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAIAACAIAAAAACCgAAACAQIAAAAABAACAAACAAA=</HashCode>
+      <FileName>View\Forms\ShapeAnimatorForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShapeAnimator.View.Shapes.CircleSprite">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>View\Shapes\CircleSprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShapeAnimator.View.Shapes.RectangleSprite">
+    <Position X="2.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>View\Shapes\RectangleSprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShapeAnimator.View.Shapes.ShapeSprite">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAIAAA=</HashCode>
+      <FileName>View\Shapes\ShapeSprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShapeAnimator.View.Shapes.StripedRectangleSprite">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>View\Shapes\StripedRectangleSprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
