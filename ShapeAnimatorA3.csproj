@@ -62,7 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\CanvasManager.cs" />
+    <Compile Include="Model\ShapeManager.cs" />
     <Compile Include="Model\Shape.cs" />
     <Compile Include="View\Forms\ShapeAnimatorForm.cs">
       <SubType>Form</SubType>

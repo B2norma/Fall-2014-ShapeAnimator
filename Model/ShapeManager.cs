@@ -11,7 +11,7 @@ namespace ShapeAnimator.Model
     /// <summary>
     ///     Manages the collection of shapeList on the canvas.
     /// </summary>
-    public class CanvasManager
+    public class ShapeManager
     {
         #region Instance variables
 
@@ -27,21 +27,21 @@ namespace ShapeAnimator.Model
         #region Constructors
 
         /// <summary>
-        ///     Prevents a default instance of the <see cref="CanvasManager" /> class from being created.
+        ///     Prevents a default instance of the <see cref="ShapeManager" /> class from being created.
         /// </summary>
-        private CanvasManager()
+        private ShapeManager()
         {
             this.shapeList = new List<Shape>();
             this.randomizer = new Random();
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="CanvasManager" /> class.
+        ///     Initializes a new instance of the <see cref="ShapeManager" /> class.
         ///     Precondition: pictureBox != null
         ///     Postcondition: canvas = pictureBox.
         /// </summary>
         /// <param name="pictureBox">The picture box that will be drawing on</param>
-        public CanvasManager(PictureBox pictureBox) : this()
+        public ShapeManager(PictureBox pictureBox) : this()
         {
             if (pictureBox == null)
             {
