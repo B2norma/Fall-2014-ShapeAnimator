@@ -15,9 +15,6 @@ namespace ShapeAnimator.Model
     {
         #region Instance variables
 
-        private const int RectangleWidthLimit = 151;
-        private const int RectangleHeightLimit = 51;
-        private const int CircleLimit = 101;
         private readonly PictureBox canvas;
         private readonly Random randomizer;
         private readonly List<Shape> shapeList;
@@ -71,19 +68,17 @@ namespace ShapeAnimator.Model
 
         private void placeTheNumberOfShapesToPlaceOnCanvasAtRandomLocationsOnCanvas()
         {
-            Shape randomShape = ShapeFactory.getRandomShape();
-            
-            setRandomLocation(randomShape);
+            Shape randomShape = ShapeFactory.GetRandomShape();
+
+            this.setRandomLocation(randomShape);
             this.shapeList.Add(randomShape);
         }
 
         private void setRandomLocation(Shape randomShape)
         {
-            randomShape.sprite.X = randomizer.Next(0, canvas.Width - randomShape.sprite.X_LIMIT);
-            randomShape.sprite.Y = randomizer.Next(0, canvas.Height - randomShape.sprite.Y_LIMIT);
+            randomShape.Sprite.X = this.randomizer.Next(0, this.canvas.Width - randomShape.Sprite.XLimit);
+            randomShape.Sprite.Y = this.randomizer.Next(0, this.canvas.Height - randomShape.Sprite.YLimit);
         }
-
-        
 
         /// <summary>
         ///     Moves the shapes in shapeList around and the calls the Shape::Paint method to draw the the shapes in shapeList.

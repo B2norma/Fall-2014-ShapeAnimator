@@ -1,40 +1,33 @@
 ﻿using System.Drawing;
-using ShapeAnimator.Model;
 
 namespace ShapeAnimator.View.Shapes
 {
     /// <summary>
     ///     Child class of ShapeSprite. Holds specific information about RectangleSprite.
-    /// </summary>t
+    /// </summary>
+    /// t
     public class RectangleSprite : ShapeSprite
     {
-
         /// <summary>
-        /// Gets the x_ limit.
+        ///     Gets the x_ limit.
         /// </summary>
         /// <value>
-        /// The x_ limit.
+        ///     The x_ limit.
         /// </value>
-        public override int X_LIMIT
+        public override int XLimit
         {
-            get
-            {
-                return 150;
-            }
+            get { return 150; }
         }
 
         /// <summary>
-        /// Gets the y_ limit.
+        ///     Gets the y_ limit.
         /// </summary>
         /// <value>
-        /// The y_ limit.
+        ///     The y_ limit.
         /// </value>
-        public override int Y_LIMIT
+        public override int YLimit
         {
-            get
-            {
-                return 50;
-            }
+            get { return 50; }
         }
 
         /// <summary>

@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using ShapeAnimator.Model;
 
 namespace ShapeAnimator.View.Shapes
 {
@@ -8,20 +7,26 @@ namespace ShapeAnimator.View.Shapes
     /// </summary>
     public class CircleSprite : ShapeSprite
     {
-        public override int X_LIMIT
+        /// <summary>
+        /// Returns the x_ limit for CircleSprite.
+        /// </summary>
+        /// <value>
+        /// The x_ limit.
+        /// </value>
+        public override int XLimit
         {
-            get
-            {
-                return 100;
-            }
+            get { return 100; }
         }
 
-        public override int Y_LIMIT
+        /// <summary>
+        /// Returns the y_ limit for CircleSprite.
+        /// </summary>
+        /// <value>
+        /// The y_ limit.
+        /// </value>
+        public override int YLimit
         {
-            get
-            {
-                return 100;
-            }
+            get { return 100; }
         }
 
         /// <summary>

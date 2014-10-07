@@ -69,16 +69,12 @@ namespace ShapeAnimator.View.Forms
 
         private void animateButton_Click(object sender, EventArgs e)
         {
+            this.animationTimer.Stop();
 
-                this.animationTimer.Stop();
+            this.canvasManager.PlaceShapesOnCanvas(this.NumberShapes);
 
-                this.canvasManager.PlaceShapesOnCanvas(NumberShapes);
-
-                this.animationTimer.Start();
-            
+            this.animationTimer.Start();
         }
-
-        
 
         #endregion
     }

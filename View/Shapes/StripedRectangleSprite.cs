@@ -1,6 +1,5 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
-using ShapeAnimator.Model;
 
 namespace ShapeAnimator.View.Shapes
 {
@@ -9,7 +8,6 @@ namespace ShapeAnimator.View.Shapes
     /// </summary>
     public class StripedRectangleSprite : RectangleSprite
     {
-
         /// <summary>
         ///     Draws a StripedRectangleSprite
         ///     Postcondition: The StripedRectangleSprite has now been painted on g at the specified x and y.

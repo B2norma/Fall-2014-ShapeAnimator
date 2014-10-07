@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ShapeAnimator.View.Shapes;
+﻿using ShapeAnimator.View.Shapes;
 
 namespace ShapeAnimator.Model
 {
-    class Rectangle : Shape
+    internal class Rectangle : Shape
     {
-        public Rectangle() : base()
+        public Rectangle()
         {
-            this.sprite = new RectangleSprite();
+            this.Sprite = new RectangleSprite();
         }
     }
 }
