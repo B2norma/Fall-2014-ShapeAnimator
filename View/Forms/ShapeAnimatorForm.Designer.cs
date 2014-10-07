@@ -48,6 +48,7 @@ namespace ShapeAnimator.View.Forms
             this.canvasPictureBox.Size = new System.Drawing.Size(720, 480);
             this.canvasPictureBox.TabIndex = 0;
             this.canvasPictureBox.TabStop = false;
+            this.canvasPictureBox.Click += new System.EventHandler(this.canvasPictureBox_Click);
             this.canvasPictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.shapeCanvasPictureBox_Paint);
             // 
             // animationTimer

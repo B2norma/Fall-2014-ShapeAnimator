@@ -61,7 +61,7 @@ namespace ShapeAnimator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Must have a valid PictureBox or program will crash when attempting to draw the canvas..
+        ///   Looks up a localized string similar to Must have a valid PictureBox or program will crash when attempting to draw the Canvas..
         /// </summary>
         internal static string PictureBoxNullMessage {
             get {

@@ -77,5 +77,10 @@ namespace ShapeAnimator.View.Forms
         }
 
         #endregion
+
+        private void canvasPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

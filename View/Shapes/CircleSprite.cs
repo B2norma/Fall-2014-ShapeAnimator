@@ -15,7 +15,7 @@ namespace ShapeAnimator.View.Shapes
         /// </value>
         public override int XLimit
         {
-            get { return 100; }
+            get { return 100;}
         }
 
         /// <summary>

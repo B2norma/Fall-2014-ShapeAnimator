@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using ShapeAnimator.View.Shapes;
 
@@ -12,12 +13,10 @@ namespace ShapeAnimator.Model
         #region Instance variables
 
         protected readonly Random Randomizer;
-
-
-        /// <summary>
-        ///     The sprite
-        /// </summary>
-        public ShapeSprite Sprite;
+        protected List<int> ShapeDirection;
+        protected ShapeSprite Sprite;
+        protected int XSpeed;
+        protected int YSpeed;
 
         #endregion
 
@@ -55,7 +54,7 @@ namespace ShapeAnimator.Model
         protected Shape()
         {
             this.Randomizer = new Random();
-            this.Sprite = null;
+            ShapeDirection = new List<int>(){1,-1};
         }
 
         /// <summary>
@@ -89,11 +88,8 @@ namespace ShapeAnimator.Model
         ///     Precondition: None
         ///     Postcondition: ShapeSprite is moved to new xy location.
         /// </summary>
-        public void Move()
-        {
-            this.Sprite.X = this.X + this.Randomizer.Next(-5, 6);
-            this.Sprite.Y = this.Y + this.Randomizer.Next(-5, 6);
-        }
+        public abstract void Move();
+        
 
         /// <summary>
         ///     Draws a shape

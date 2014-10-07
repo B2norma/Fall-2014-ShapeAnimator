@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using ShapeAnimator.Model;
 
 namespace ShapeAnimator.View.Shapes
@@ -20,6 +21,8 @@ namespace ShapeAnimator.View.Shapes
         public static Shape GetRandomShape()
         {
             shapes = Enum.GetValues(typeof (ShapeType)).Cast<ShapeType>().ToList();
+
+            System.Threading.Thread.Sleep(50);
 
             switch (Rand.Next(shapes.Count))
             {
