@@ -71,32 +71,19 @@ namespace ShapeAnimator.Model
 
         private void placeTheNumberOfShapesToPlaceOnCanvasAtRandomLocationsOnCanvas()
         {
-            ShapeSprite randomShape = this.getRandomShape();
-
-            this.shapeList.Add(new Shape(randomShape));
+            Shape randomShape = ShapeFactory.getRandomShape();
+            
+            setRandomLocation(randomShape);
+            this.shapeList.Add(randomShape);
         }
 
-        private ShapeSprite getRandomShape()
+        private void setRandomLocation(Shape randomShape)
         {
-            int rectangleX = this.randomizer.Next(this.canvas.Width - RectangleWidthLimit);
-            int rectangleY = this.randomizer.Next(this.canvas.Height - RectangleHeightLimit);
-            int circleX = this.randomizer.Next(this.canvas.Width - CircleLimit);
-            int circleY = this.randomizer.Next(this.canvas.Height - CircleLimit);
-
-            var shapeSpriteList = new List<ShapeSprite>();
-
-            shapeSpriteList.Clear();
-
-            ShapeSprite rectangle = new RectangleSprite(new Shape(rectangleX, rectangleY));
-            ShapeSprite stripedRectangle = new StripedRectangleSprite(new Shape(rectangleX, rectangleY));
-            ShapeSprite circle = new CircleSprite(new Shape(circleX, circleY));
-
-            shapeSpriteList.Add(rectangle);
-            shapeSpriteList.Add(stripedRectangle);
-            shapeSpriteList.Add(circle);
-
-            return shapeSpriteList[this.randomizer.Next(3)];
+            randomShape.sprite.X = randomizer.Next(0, canvas.Width - randomShape.sprite.X_LIMIT);
+            randomShape.sprite.Y = randomizer.Next(0, canvas.Height - randomShape.sprite.Y_LIMIT);
         }
+
+        
 
         /// <summary>
         ///     Moves the shapes in shapeList around and the calls the Shape::Paint method to draw the the shapes in shapeList.
@@ -115,7 +102,7 @@ namespace ShapeAnimator.Model
             {
                 foreach (Shape currShape in this.shapeList)
                 {
-                    currShape.Sprite.Move();
+                    currShape.Move();
                     currShape.Paint(g);
                 }
             }

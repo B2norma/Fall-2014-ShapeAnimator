@@ -69,27 +69,16 @@ namespace ShapeAnimator.View.Forms
 
         private void animateButton_Click(object sender, EventArgs e)
         {
-            if (this.inputIsANumberAndIsGreaterThenZero())
-            {
+
                 this.animationTimer.Stop();
 
-                this.canvasManager.PlaceShapesOnCanvas(Convert.ToInt32(this.numberShapesTextBox.Text));
+                this.canvasManager.PlaceShapesOnCanvas(NumberShapes);
 
                 this.animationTimer.Start();
-            }
-            else
-            {
-                MessageBox.Show("Input must be a number and be greater then zero.", "Invalid Input",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
-        private bool inputIsANumberAndIsGreaterThenZero()
-        {
-            int number;
-            return Int32.TryParse(this.numberShapesTextBox.Text, out number) &&
-                   Convert.ToInt32(this.numberShapesTextBox.Text) > 0;
-        }
+        
 
         #endregion
     }

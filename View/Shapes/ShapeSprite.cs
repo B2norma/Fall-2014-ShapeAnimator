@@ -10,39 +10,50 @@ namespace ShapeAnimator.View.Shapes
     public abstract class ShapeSprite
     {
 
-        /// <summary>
-        ///     The shape
-        /// </summary>
-        public Shape TheShape;
+        
+        
 
-        private readonly Random randomizer;
+        #region Properties
 
         /// <summary>
-        ///     Prevents a default instance of the <see cref="ShapeSprite" /> class from being created.
+        ///     Gets or sets the x location of the shape.
         /// </summary>
-        private ShapeSprite()
+        /// <value>
+        ///     The x.
+        /// </value>
+
+        public int X
         {
-            this.TheShape = null;
-            this.randomizer = null;
+            get;
+            set;
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ShapeSprite" /> class.
-        ///     Precondition: shape != null
-        ///     Postcondition: TheShape = shape; randomizer = new Random;
+        ///     Gets or sets the y location of the shape.
         /// </summary>
-        /// <param name="shape">The shape.</param>
-        /// <exception cref="System.ArgumentNullException">shape</exception>
-        protected ShapeSprite(Shape shape) : this()
-        {
-            if (shape == null)
-            {
-                throw new ArgumentNullException("shape");
-            }
+        /// <value>
+        ///     The y.
+        /// </value>
 
-            this.TheShape = shape;
-            this.randomizer = new Random();
+        public int Y
+        {
+            get;
+            set;
         }
+
+        public abstract int X_LIMIT
+        {
+            get;
+        }
+
+        public abstract int Y_LIMIT
+        {
+            get;
+        }
+
+        #endregion
+
+        
 
         /// <summary>
         ///     Paints the specified graphics object.
@@ -56,17 +67,6 @@ namespace ShapeAnimator.View.Shapes
             {
                 throw new ArgumentNullException("g");
             }
-        }
-
-        /// <summary>
-        ///     Moves The shape in a random x and y direction.
-        ///     Precondition: None
-        ///     Postcondition: ShapeSprite is moved to new xy location.
-        /// </summary>
-        public void Move()
-        {
-            this.TheShape.X += this.randomizer.Next(-5, 6);
-            this.TheShape.Y += this.randomizer.Next(-5, 6);
         }
     }
 }

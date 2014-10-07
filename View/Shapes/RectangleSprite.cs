@@ -5,19 +5,41 @@ namespace ShapeAnimator.View.Shapes
 {
     /// <summary>
     ///     Child class of ShapeSprite. Holds specific information about RectangleSprite.
-    /// </summary>
+    /// </summary>t
     public class RectangleSprite : ShapeSprite
     {
+
         /// <summary>
-        ///     Initializes a new instance of the <see cref="RectangleSprite" /> class.
+        /// Gets the x_ limit.
         /// </summary>
-        /// <param name="shape">The shape.</param>
-        public RectangleSprite(Shape shape) : base(shape)
+        /// <value>
+        /// The x_ limit.
+        /// </value>
+        public override int X_LIMIT
         {
+            get
+            {
+                return 150;
+            }
         }
 
         /// <summary>
-        ///     Draws a RectangleSprite.
+        /// Gets the y_ limit.
+        /// </summary>
+        /// <value>
+        /// The y_ limit.
+        /// </value>
+        public override int Y_LIMIT
+        {
+            get
+            {
+                return 50;
+            }
+        }
+
+        /// <summary>
+        ///     Draws a RectangleSp
+        ///     rite.
         ///     Postcondition: The RectangleSprite has now been painted on g at the specified x and y.
         /// </summary>
         /// <param name="g">The graphics object to draw the shape one</param>
@@ -27,7 +49,7 @@ namespace ShapeAnimator.View.Shapes
 
             var redBrush = new SolidBrush(Color.Red);
 
-            g.FillRectangle(redBrush, this.TheShape.X, this.TheShape.Y, 150, 50);
+            g.FillRectangle(redBrush, this.X, this.Y, 150, 50);
         }
     }
 }

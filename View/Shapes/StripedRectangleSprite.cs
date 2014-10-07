@@ -9,13 +9,6 @@ namespace ShapeAnimator.View.Shapes
     /// </summary>
     public class StripedRectangleSprite : RectangleSprite
     {
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="StripedRectangleSprite" /> class.
-        /// </summary>
-        /// <param name="shape">The shape.</param>
-        public StripedRectangleSprite(Shape shape) : base(shape)
-        {
-        }
 
         /// <summary>
         ///     Draws a StripedRectangleSprite
@@ -29,7 +22,7 @@ namespace ShapeAnimator.View.Shapes
             var myHatchBrush =
                 new HatchBrush(HatchStyle.Vertical, Color.Blue, Color.GreenYellow);
 
-            g.FillRectangle(myHatchBrush, this.TheShape.X, this.TheShape.Y, 150, 50);
+            g.FillRectangle(myHatchBrush, this.X, this.Y, 150, 50);
         }
     }
 }

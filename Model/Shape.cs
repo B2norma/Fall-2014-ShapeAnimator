@@ -7,14 +7,15 @@ namespace ShapeAnimator.Model
     /// <summary>
     ///     Holds information about the shape object
     /// </summary>
-    public class Shape
+    public abstract class Shape
     {
         #region Instance variables
 
         /// <summary>
         ///     The sprite
         /// </summary>
-        public readonly ShapeSprite Sprite;
+        public ShapeSprite sprite;
+        protected readonly Random randomizer;
 
         private Point location;
 
@@ -28,10 +29,10 @@ namespace ShapeAnimator.Model
         /// <value>
         ///     The x.
         /// </value>
+
         public int X
         {
-            get { return this.location.X; }
-            set { this.location.X = value; }
+            get { return this.sprite.X; }
         }
 
         /// <summary>
@@ -40,10 +41,10 @@ namespace ShapeAnimator.Model
         /// <value>
         ///     The y.
         /// </value>
+
         public int Y
         {
-            get { return this.location.Y; }
-            set { this.location.Y = value; }
+            get { return this.sprite.Y; }
         }
 
         #endregion
@@ -53,8 +54,10 @@ namespace ShapeAnimator.Model
         /// <summary>
         ///     Default constructor
         /// </summary>
-        private Shape()
+        protected Shape()
         {
+            this.randomizer = new Random();
+            this.sprite = null;
         }
 
         /// <summary>
@@ -83,7 +86,7 @@ namespace ShapeAnimator.Model
         /// <param name="y">The y coordinate</param>
         public Shape(int x, int y) : this()
         {
-            this.location = new Point(x, y);
+            
         }
 
         /// <summary>
@@ -95,16 +98,23 @@ namespace ShapeAnimator.Model
         /// <exception cref="System.ArgumentNullException">aShapeSprite</exception>
         public Shape(ShapeSprite aShapeSprite) : this()
         {
-            if (aShapeSprite == null)
-            {
-                throw new ArgumentNullException("aShapeSprite");
-            }
-            this.Sprite = aShapeSprite;
         }
 
         #endregion
 
         #region Methods
+
+        /// <summary>
+        ///     Moves The shape in a random x and y direction.
+        ///     Precondition: None
+        ///     Postcondition: ShapeSprite is moved to new xy location.
+        /// </summary>
+        public void Move()
+        {
+
+            this.sprite.X = this.X + this.randomizer.Next(-5, 6);
+            this.sprite.Y = this.Y + this.randomizer.Next(-5, 6);
+        }
 
         /// <summary>
         ///     Draws a shape
@@ -118,7 +128,7 @@ namespace ShapeAnimator.Model
                 throw new ArgumentNullException("g");
             }
 
-            this.Sprite.Paint(g);
+            this.sprite.Paint(g);
         }
 
         #endregion

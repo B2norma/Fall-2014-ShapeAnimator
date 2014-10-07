@@ -8,12 +8,20 @@ namespace ShapeAnimator.View.Shapes
     /// </summary>
     public class CircleSprite : ShapeSprite
     {
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="CircleSprite" /> class.
-        /// </summary>
-        /// <param name="shape">The shape.</param>
-        public CircleSprite(Shape shape) : base(shape)
+        public override int X_LIMIT
         {
+            get
+            {
+                return 100;
+            }
+        }
+
+        public override int Y_LIMIT
+        {
+            get
+            {
+                return 100;
+            }
         }
 
         /// <summary>
@@ -28,7 +36,7 @@ namespace ShapeAnimator.View.Shapes
 
             var yellowBrush = new SolidBrush(Color.Yellow);
 
-            g.FillEllipse(yellowBrush, this.TheShape.X, this.TheShape.Y, 100, 100);
+            g.FillEllipse(yellowBrush, this.X, this.Y, 100, 100);
         }
     }
 }
