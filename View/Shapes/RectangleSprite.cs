@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using ShapeAnimator.Utilities;
 
 namespace ShapeAnimator.View.Shapes
 {
@@ -8,6 +9,16 @@ namespace ShapeAnimator.View.Shapes
     /// t
     public class RectangleSprite : ShapeSprite
     {
+        private readonly Color randomColor;
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="RectangleSprite" /> class.
+        /// </summary>
+        public RectangleSprite()
+        {
+            this.randomColor = ColorFactory.GetRandomColor();
+        }
+
         /// <summary>
         ///     Gets the x_ limit.
         /// </summary>
@@ -40,7 +51,7 @@ namespace ShapeAnimator.View.Shapes
         {
             base.Paint(g);
 
-            var redBrush = new SolidBrush(Color.Red);
+            var redBrush = new SolidBrush(this.randomColor);
 
             g.FillRectangle(redBrush, this.X, this.Y, 150, 50);
         }

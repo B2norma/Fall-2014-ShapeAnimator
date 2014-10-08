@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using ShapeAnimator.Utilities;
 
 namespace ShapeAnimator.View.Shapes
 {
@@ -7,22 +8,32 @@ namespace ShapeAnimator.View.Shapes
     /// </summary>
     public class CircleSprite : ShapeSprite
     {
+        private readonly Color randomColor;
+
         /// <summary>
-        /// Returns the x_ limit for CircleSprite.
+        ///     Initializes a new instance of the <see cref="CircleSprite" /> class.
         /// </summary>
-        /// <value>
-        /// The x_ limit.
-        /// </value>
-        public override int XLimit
+        public CircleSprite()
         {
-            get { return 100;}
+            this.randomColor = ColorFactory.GetRandomColor();
         }
 
         /// <summary>
-        /// Returns the y_ limit for CircleSprite.
+        ///     Returns the x_ limit for CircleSprite.
         /// </summary>
         /// <value>
-        /// The y_ limit.
+        ///     The x_ limit.
+        /// </value>
+        public override int XLimit
+        {
+            get { return 100; }
+        }
+
+        /// <summary>
+        ///     Returns the y_ limit for CircleSprite.
+        /// </summary>
+        /// <value>
+        ///     The y_ limit.
         /// </value>
         public override int YLimit
         {
@@ -39,9 +50,9 @@ namespace ShapeAnimator.View.Shapes
         {
             base.Paint(g);
 
-            var yellowBrush = new SolidBrush(Color.Yellow);
+            var brush = new SolidBrush(this.randomColor);
 
-            g.FillEllipse(yellowBrush, this.X, this.Y, 100, 100);
+            g.FillEllipse(brush, this.X, this.Y, 100, 100);
         }
     }
 }

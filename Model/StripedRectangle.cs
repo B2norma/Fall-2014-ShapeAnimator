@@ -2,14 +2,22 @@
 
 namespace ShapeAnimator.Model
 {
+    /// ///
+    /// <summary>
+    ///     A class derived from Rectangle that hold specific data for the StripedRectangle shape.
+    /// </summary>
     public class StripedRectangle : Rectangle
     {
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="StripedRectangle" /> class.
+        /// </summary>
         public StripedRectangle()
         {
             this.Sprite = new StripedRectangleSprite();
-            this.Sprite.X = this.Randomizer.Next(0, ShapeManager.CanvasWidth - this.Sprite.XLimit);
-            this.Sprite.Y = this.Randomizer.Next(0, ShapeManager.CanvasHeight - this.Sprite.YLimit);
-            this.YSpeed = this.Randomizer.Next(1, 6);
+            this.SetRandomXandYLocation();
+            this.GetRandomSpeedAndRandomDirection();
         }
+
+        
     }
 }

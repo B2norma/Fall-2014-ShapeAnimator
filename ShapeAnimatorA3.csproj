@@ -76,7 +76,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Shapes\CircleSprite.cs" />
-    <Compile Include="View\Shapes\ShapeFactory.cs" />
+    <Compile Include="Utilities\ShapeFactory.cs" />
+    <Compile Include="Utilities\ColorFactory.cs" />
     <Compile Include="View\Shapes\ShapeSprite.cs" />
     <Compile Include="View\Shapes\RectangleSprite.cs" />
     <Compile Include="View\Shapes\StripedRectangleSprite.cs" />

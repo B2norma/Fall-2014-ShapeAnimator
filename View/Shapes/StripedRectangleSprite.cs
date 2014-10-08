@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
+using ShapeAnimator.Utilities;
 
 namespace ShapeAnimator.View.Shapes
 {
@@ -8,6 +9,17 @@ namespace ShapeAnimator.View.Shapes
     /// </summary>
     public class StripedRectangleSprite : RectangleSprite
     {
+        private readonly HatchBrush myHatchBrush;
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="StripedRectangleSprite" /> class.
+        /// </summary>
+        public StripedRectangleSprite()
+        {
+            this.myHatchBrush = new HatchBrush(HatchStyle.Vertical, ColorFactory.GetRandomColor(),
+                ColorFactory.GetRandomColor());
+        }
+
         /// <summary>
         ///     Draws a StripedRectangleSprite
         ///     Postcondition: The StripedRectangleSprite has now been painted on g at the specified x and y.
@@ -17,10 +29,7 @@ namespace ShapeAnimator.View.Shapes
         {
             base.Paint(g);
 
-            var myHatchBrush =
-                new HatchBrush(HatchStyle.Vertical, Color.Blue, Color.GreenYellow);
-
-            g.FillRectangle(myHatchBrush, this.X, this.Y, 150, 50);
+            g.FillRectangle(this.myHatchBrush, this.X, this.Y, 150, 50);
         }
     }
 }

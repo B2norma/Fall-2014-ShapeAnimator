@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Forms;
 using ShapeAnimator.Properties;
-using ShapeAnimator.View.Shapes;
+using ShapeAnimator.Utilities;
 
 namespace ShapeAnimator.Model
 {
@@ -16,22 +15,22 @@ namespace ShapeAnimator.Model
     {
         #region Instance variables
 
-        private PictureBox canvas;
-        private readonly Random randomizer;
-        private readonly List<Shape> shapeList;
-        public const int  CanvasHeight = 480;
+        /// <summary>
+        ///     The canvas height
+        /// </summary>
+        public const int CanvasHeight = 480;
+
+        /// <summary>
+        ///     The canvas width
+        /// </summary>
         public const int CanvasWidth = 720;
+
+        private readonly List<Shape> shapeList;
 
         #endregion
 
-        
-
         #region Constructors
 
-        public ShapeManager()
-        {
-            
-        }
         /// <summary>
         ///     Initializes a new instance of the <see cref="ShapeManager" /> class.
         ///     Precondition: pictureBox != null
@@ -45,10 +44,7 @@ namespace ShapeAnimator.Model
                 throw new ArgumentNullException("pictureBox", Resources.PictureBoxNullMessage);
             }
 
-            this.canvas = pictureBox;
             this.shapeList = new List<Shape>();
-            this.randomizer = new Random();
-            
         }
 
         #endregion
@@ -61,7 +57,7 @@ namespace ShapeAnimator.Model
         /// <param name="numberOfShapesToPlaceOnCanvas">The number of shapes to be placed on the Canvas</param>
         public void PlaceShapesOnCanvas(int numberOfShapesToPlaceOnCanvas)
         {
-           this.shapeList.Clear();
+            this.shapeList.Clear();
 
             for (int i = 0; i < numberOfShapesToPlaceOnCanvas; i++)
             {
@@ -75,8 +71,6 @@ namespace ShapeAnimator.Model
         {
             this.shapeList.Add(ShapeFactory.GetRandomShape());
         }
-
-        
 
         /// <summary>
         ///     Moves the shapes in shapeList around and the calls the Shape::Paint method to draw the the shapes in shapeList.

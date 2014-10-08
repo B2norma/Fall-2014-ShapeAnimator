@@ -54,29 +54,7 @@ namespace ShapeAnimator.Model
         protected Shape()
         {
             this.Randomizer = new Random();
-            ShapeDirection = new List<int>(){1,-1};
-        }
-
-        /// <summary>
-        ///     Constructs a shape specified x,y location
-        ///     Precondition: None
-        ///     Postcondition: X == x; Y == y
-        /// </summary>
-        /// <param name="x">The x coordinate</param>
-        /// <param name="y">The y coordinate</param>
-        protected Shape(int x, int y) : this()
-        {
-        }
-
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="Shape" /> class.
-        ///     Precondition: aShapeSprite != null
-        ///     Postcondition: Sprite = aShapeSprite
-        /// </summary>
-        /// <param name="aShapeSprite">A shape sprite.</param>
-        /// <exception cref="System.ArgumentNullException">aShapeSprite</exception>
-        protected Shape(ShapeSprite aShapeSprite) : this()
-        {
+            this.ShapeDirection = new List<int> {1, -1};
         }
 
         #endregion
@@ -84,12 +62,22 @@ namespace ShapeAnimator.Model
         #region Methods
 
         /// <summary>
-        ///     Moves The shape in a random x and y direction.
+        /// Sets the random x and y location.
+        /// Preconditions: None.
+        /// Postcondition: the Shape now has a random X and Y.
+        /// </summary>
+        protected void SetRandomXandYLocation()
+        {
+            this.Sprite.X = this.Randomizer.Next(0, ShapeManager.CanvasWidth - this.Sprite.XLimit);
+            this.Sprite.Y = this.Randomizer.Next(0, ShapeManager.CanvasHeight - this.Sprite.YLimit);
+        }
+
+        /// <summary>
+        ///     Moves The shape at a random speed in the x or y direction.
         ///     Precondition: None
-        ///     Postcondition: ShapeSprite is moved to new xy location.
+        ///     Postcondition: ShapeSprite is moved in a x or y direction equal the the speed.
         /// </summary>
         public abstract void Move();
-        
 
         /// <summary>
         ///     Draws a shape

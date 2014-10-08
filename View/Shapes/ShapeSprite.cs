@@ -27,18 +27,18 @@ namespace ShapeAnimator.View.Shapes
         public int Y { get; set; }
 
         /// <summary>
-        /// Returns the x limit for the ShapeSprite it is called on.
+        ///     Returns the x limit for the ShapeSprite it is called on.
         /// </summary>
         /// <value>
-        /// The x_ limit.
+        ///     The x_ limit.
         /// </value>
         public abstract int XLimit { get; }
 
         /// <summary>
-        /// Returns the y limit for the ShapeSprite it is called on.
+        ///     Returns the y limit for the ShapeSprite it is called on.
         /// </summary>
         /// <value>
-        /// The y_ limit.
+        ///     The y_ limit.
         /// </value>
         public abstract int YLimit { get; }
 

@@ -80,7 +80,6 @@ namespace ShapeAnimator.View.Forms
 
         private void canvasPictureBox_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
